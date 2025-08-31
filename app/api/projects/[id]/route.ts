@@ -2,7 +2,7 @@ import { prisma } from '@/lib/prisma';
 import { currentUser } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
-export const GET = async (request: Request, { params }: { params: { id: string } }) => {
+export const GET = async (request: Request, { params }: { params: Promise<{ id: string }> }) => {
   try {
     const { id } = await params;
     const project = await prisma.project.findUnique({
@@ -31,7 +31,7 @@ export const GET = async (request: Request, { params }: { params: { id: string }
   }
 };
 
-export const PATCH = async (request: Request, { params }: { params: { id: string } }) => {
+export const PATCH = async (request: Request, { params }: { params: Promise<{ id: string }> }) => {
   try {
     const user = await currentUser();
     if (!user) return NextResponse.json({ message: 'Not Authorized', ok: false }, { status: 401 });
@@ -59,7 +59,7 @@ export const PATCH = async (request: Request, { params }: { params: { id: string
   }
 };
 
-export const DELETE = async (request: Request, { params }: { params: { id: string } }) => {
+export const DELETE = async (request: Request, { params }: { params: Promise<{ id: string }> }) => {
   try {
     const user = await currentUser();
     if (!user) return NextResponse.json({ message: 'Not Authorized', ok: false }, { status: 401 });

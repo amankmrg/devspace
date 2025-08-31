@@ -1,5 +1,5 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
-import syncUser from './lib/syncUser'
+// import syncUser from './lib/syncUser'
 import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 import {prisma} from '@/lib/prisma'

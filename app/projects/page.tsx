@@ -19,7 +19,7 @@ type Data = {
 }
 
 type resData = {
-    ok:Boolean,
+    ok:boolean,
     res:Data[]
 }
 
@@ -32,7 +32,7 @@ const fetcher = async(url:string) => {
     return res.json();
 }
 
-const page = () => {
+const Page = () => {
 
   const {data,error, isLoading, mutate} = useSWR<resData>(
     "/api/projects",
@@ -54,7 +54,7 @@ const page = () => {
     const [formError, setFormError] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
-        const {name, value, type} = e.target;
+        const {name, value} = e.target;
         setForm(prev => ({
           ...prev,
           [name]: value
@@ -91,8 +91,8 @@ const page = () => {
       // Refresh list
       mutate();
     
-        }catch(error:any){
-          setFormError(error.message);
+        }catch(error: unknown){
+          setFormError(error instanceof Error ? error.message : 'An error occurred');
         }finally{
           setSubmitting(false);
         }
@@ -258,4 +258,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

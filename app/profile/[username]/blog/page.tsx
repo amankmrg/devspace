@@ -89,7 +89,7 @@ export default function UserBlogPage({ params }: { params: Promise<{ username: s
               href={`/profile/${user.username}`}
               className="text-sm text-indigo-400 hover:text-indigo-300"
             >
-              ← Back to {user.name}'s profile
+              ← Back to {user.name}&apos;s profile
             </Link>
           </nav>
           <h1 className="text-2xl font-semibold text-white">All Posts by {user.name}</h1>
@@ -102,7 +102,7 @@ export default function UserBlogPage({ params }: { params: Promise<{ username: s
           <div className="grid place-items-center min-h-[30vh]">
             <div className="rounded-xl border border-zinc-800 bg-zinc-950/60 px-6 py-10 text-center">
               <h2 className="text-base font-medium text-white">No public posts</h2>
-              <p className="mt-2 text-sm text-zinc-400">{user.name} hasn't published any posts yet.</p>
+              <p className="mt-2 text-sm text-zinc-400">{user.name} hasn&apos;t published any posts yet.</p>
             </div>
           </div>
         ) : (

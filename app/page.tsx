@@ -43,7 +43,7 @@ export default async function Home() {
       Full Stack Developer
     </span>
     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
-      Hi, I'm <span className="bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">Aman Kumar</span>
+      Hi, I&apos;m <span className="bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">Aman Kumar</span>
     </h1>
     <p className="text-zinc-600 dark:text-zinc-400 max-w-prose text-lg">
       Full Stack Developer skilled in React.js, Next.js, Node.js, and modern web technologies. 

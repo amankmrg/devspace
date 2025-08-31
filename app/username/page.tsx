@@ -70,9 +70,9 @@ const Username = () => {
                 setRedirectOnSuccess(true);
             }
 
-        } catch (error: any) {
+        } catch (error: unknown) {
             // Set the state with the actual error message to display it in the UI
-            setFormError(error.message);
+            setFormError(error instanceof Error ? error.message : 'An error occurred');
             setShowForm(true); // Make sure the form is visible to show the error
 
         } finally {
