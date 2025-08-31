@@ -104,7 +104,7 @@ async function handleUserCreated(userData: ClerkUser) {
         id,
         name: `${first_name || ''} ${last_name || ''}`.trim(),
         email: email_addresses[0]?.email_address || '',
-        username: username || null,
+        username: null,
       },
     });
 
