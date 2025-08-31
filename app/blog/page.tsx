@@ -43,7 +43,7 @@ const fetcher = async(url:string)=>{
 
 const Blog = () => {
   const {data,error,isLoading} = useSWR<resData>(
-    "http://localhost:3000/api/posts",
+    "/api/posts",
     fetcher,
     {revalidateOnFocus:true}
   )
@@ -100,7 +100,7 @@ const Blog = () => {
     setFormError('');
 
     try{
-      const res = await fetch("http://localhost:3000/api/posts",{
+      const res = await fetch("/api/posts",{
         method:'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(form),
